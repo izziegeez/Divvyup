@@ -17,7 +17,6 @@ const authenticateUser = async (username, password) => {
   await User.findOne({ username })
     .select("password username id")
     .then(data => {
-      console.log(data);
       let success = data && bcrypt.compareSync(password, data.password),
         user = { username: data.username, id: data.id };
       result = { user, success };
