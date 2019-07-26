@@ -23,12 +23,12 @@
 
 @media screen and (min-width: 1000px) {
   .container {
-    height: 60%;
-    width: 60%;
-    > .vert-form {
-      > input {
-        font-size: 40px;
-        margin: 40px;
+    // height: 60%;// width: 60%;
+
+    >.vert-form {
+      >input {
+        // font-size: 40px;
+        // margin: 40px;
       }
     }
   }
@@ -93,7 +93,8 @@
     width: 100%;
     height: fit-content;
     justify-content: space-around;
-    > * {
+
+    >* {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
@@ -131,13 +132,13 @@
     top: 10px;
   }
 
-  #party-box { 
+  #party-box {
     padding: 30px;
     padding-top: 60px;
     height: fit-content;
   }
 
-  #contribution-form > * {
+  #contribution-form>* {
     font-size: 10px;
   }
 }
