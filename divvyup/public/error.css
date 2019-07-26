@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-align: center;
+  font-family: '';
+  list-style-position: inside;
+  text-overflow: ellipsis;
+  /* background-color: #d47677; */
+  background: url(../img/beach_bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+html, #root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Content */
+
+.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  width: max-content;
+  flex-flow: column;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Element Styling */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: royalblue;
+  cursor: pointer;
+}
+
+/* Text */
+
+.large-text {
+  color: #337ab7;
+  font-size: 30px;
+  padding: 5px 10px;
+}
+
+.small-text {
+  color: #337ab7;
+  padding: 5px 10px;
+  margin-top: 20px;
+  word-wrap: break-word;
+}

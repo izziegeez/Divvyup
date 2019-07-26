@@ -1,0 +1,92 @@
+/* Standard Animations */
+
+.bouncy {
+    opacity: 0;
+    -webkit-animation: 0.2s ease-out forwards 0s bounce;
+}
+
+.grow {
+    height: 0;
+    overflow: hidden;
+    -webkit-animation: 0.2s linear grow;
+    animation-fill-mode: forwards;
+}
+
+.appear {
+    opacity: 0;
+    -webkit-animation: 0.2s linear appear;
+    animation-delay: 1s;  /*delayed more than doneLoading*/
+    animation-fill-mode: forwards;
+}
+
+/* Loading Message Styling */
+
+.loading {
+    font-size: 48px;
+    font-weight: bold;
+    /* color: #79C2EA; */
+    color: white;
+    -webkit-animation: 0.5s linear infinite bounce;
+}
+
+.done-loading {
+    font-size: 48px;
+    font-weight: bold;
+    /* color: #79C2EA; */
+    color: white;
+    -webkit-animation: 0.8s linear disappear;
+    animation-fill-mode: forwards;
+}
+
+/* Arrow on Slide List */
+
+.down {
+    margin-left: 10px;
+    transform: rotate(405deg);
+    transition: 0.5s;
+    transition-timing-function: ease;
+    -webkit-transform: rotate(405deg);
+}
+
+.up {
+    margin-left: 10px;
+    transform: rotate(-135deg);
+    transition: 0.5s;
+    transition-timing-function: ease;
+    -webkit-transform: rotate(-135deg);
+}
+
+.arrow   {
+    border: solid #337ab7;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+/* Animations */
+
+@keyframes bounce  {
+  0% { margin-bottom: 0; }
+  50% { margin-bottom: 15px; }
+  100% { margin-bottom: 0; }
+}
+
+@keyframes disappear  {
+    0% { opacity: 1; }
+    100%   { opacity: 0; height: 0; }
+}
+
+@keyframes appear  {
+    from { opacity: 0; /*width: 0;*/ }
+    to { opacity: 1; }
+}
+
+@keyframes grow  {
+    from { height: 0; /*width: 0;*/ }
+    to { height: 100%; }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
