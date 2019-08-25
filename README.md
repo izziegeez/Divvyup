@@ -23,7 +23,7 @@
 > Divvyup Website Workflow
 
 ## Website demo
-![Profile Page]([img]https://i.imgur.com/0D3ENvr.png[/img])
+![Profile Page](https://i.imgur.com/0D3ENvr.png)
 > Profile Page
 
 ![Host a Party](https://i.imgur.com/Va1zBSt.png)
