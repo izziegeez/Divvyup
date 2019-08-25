@@ -74,8 +74,8 @@ This encourages hosts and partygoers to branch out and invite more people.
 - `MongoDB`
 * **Schemas**: a Party and a User schema
 * **Models**: Party and User
-		**Party**: name, id, cost, attendees, archived
-		**User**: username, password, id, account balance
+	* **Party**: name, id, cost, attendees, archived
+	* **User**: username, password, id, account balance
     
 ## Implementation Details
 -`AJAX` :We use axios in React.
