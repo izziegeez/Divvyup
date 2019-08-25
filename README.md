@@ -24,7 +24,7 @@
 
 ## Website demo
 - Profile Page
-[img]https://i.imgur.com/bpkUqVS.mp4[/img]
+![Host a Party]https://i.imgur.com/bpkUqVS.mp4
 
 ![APIs design](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/APIs.png)
 > APIs design in logic tier
