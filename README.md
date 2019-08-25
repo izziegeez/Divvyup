@@ -41,24 +41,24 @@
 		**User**: username, password, id, account balance
     
 ## Implementation Details
-* **AJAX** :We use axios in React.
- *GET:
-		* Login page: send all users in DB
-		* Profile page: send individual user information
-		* Host page: send all active parties
-		* Join page: send all active parties
-		* Party page: send info on all active parties and the individual party
-		* Contribute page: send info on individual party
-		* Error page: sends error info
+* **`AJAX`** :We use axios in React.
+ - `GET`:
+ 	* Login page: send all users in DB
+	* Profile page: send individual user information
+	* Host page: send all active parties
+	* Join page: send all active parties
+	* Party page: send info on all active parties and the individual party
+	* Contribute page: send info on individual party
+	* Error page: sends error info
 		
-*POST:
-		*Login page: create a new user
-		*Host page: create a new party
-		*Contribute page: update individual user and party information
+- `POST`:
+	* Login page: create a new user
+	* Host page: create a new party
+	* Contribute page: update individual user and party information
 
 ## Security
-- Bcrypt (a Node.JS package)
+- `Bcrypt` (a Node.JS package)
   * Strong password policy: Password must be 8 characters long, and contain at least one of each: Capital Letter, Lowercase Character, Non-Alphanumeric Character e.g. !@#$%^&*~)
-  *	Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
+  *Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
 ![MongoDB](https://i.imgur.com/273gw4F.png)
  > only hashed paswrods are stored
