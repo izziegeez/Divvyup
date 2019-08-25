@@ -29,7 +29,7 @@
 ![Host a Party](https://i.imgur.com/5x9Wysz.gif)
 > Host a Party
 
-![Join a Party](https://i.imgur.com/5x9Wysz.gif)
+![Join a Party](https://i.imgur.com/eSvmR2N.gif)
 > Join a Party
 
 
@@ -68,7 +68,8 @@
 
 ## Security
 - `Bcrypt` (a Node.JS package)
-  * Strong password policy: Password must be 8 characters long, and contain at least one of each: Capital Letter, Lowercase Character, Non-Alphanumeric Character e.g. !@#$%^&*~)
-  *Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
+  * We have a Strong password policy: Password must be 8 characters long, and contain at least one of each: Capital Letter, Lowercase Character, Non-Alphanumeric Character e.g. !@#$%^&*~)
+  * Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
+  
 ![MongoDB](https://i.imgur.com/273gw4F.png)
  > only hashed paswrods are stored
