@@ -1,5 +1,5 @@
-# DivvyUp: Divide Expenses with Friends (Full-stack NodeJS Web Application) 		
-
+# DivvyUp: Divide Expenses with Friends
+- (Full-stack NodeJS Web Application) 		
 ## General Instruction
 - Implemented an expense splitting service like Splitwise that allows real-time balance update when new attendees join to contribute to the cost of goods, and helps distribute the responsibility of reimbursement among the group. 
 - Frontend: an interactive web page with `AJAX` technology implemented with `React`, `HTML`, `CSS` ,`Bootstrap`, `JavaScript`. The Divvyup Website realizes four main functions:
@@ -20,7 +20,7 @@
    * Logic tier: Java
 - Local and remote development environment
 
-![local environment](https://imgur.com/LvDX7h7)
+![local environment](http://i.imgur.com/LvDX7h7.png)
 > Local development environment
 
 ![remote environment](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/remote.png)
