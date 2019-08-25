@@ -20,7 +20,7 @@
    * Logic tier: Java
 - Local and remote development environment
 
-![local environment](https://s.imgur.com/min/embed.js)
+![local environment](https://imgur.com/LvDX7h7)
 > Local development environment
 
 ![remote environment](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/remote.png)
