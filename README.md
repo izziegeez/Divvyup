@@ -25,6 +25,15 @@
 ## Website demo
 ![Profile Page](https://i.imgur.com/0D3ENvr.png)
 > Profile Page
+- Displays user’s name, profile picture, and current Balance $$
+- Offers five options to the logged in user:
+  * Previous Parties : User’s previous party history is displayed, i.e. party name and amount due per party
+      * “My Ended Party: $42”
+  * Active Parties: Displays a list of active parties that the user is currently in with party name and ID
+      * “My Active Cool Party: ABC123”
+  * Host a Party : Redirects user to party creation interface
+  * Join a Party : Redirects user to party search interface
+  *  Log Out : Logs out user from the application
 
 ![Host a Party](https://i.imgur.com/Va1zBSt.png)
 ![Host a Party2](https://i.imgur.com/C1NdhhF.png)
@@ -34,7 +43,7 @@
 ![Join a Party2](https://i.imgur.com/ZmfpAA4.png)
 > Join a Party
 
-![Amount to Pay](https://i.imgur.com/jp2CCk7.png)
+![Amount to Pay](https://i.imgur.com/DTQENCD.png)
 > Amount to Pay (responsive on a mobile device)
 
 ## Database Design
