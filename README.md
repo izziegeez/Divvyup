@@ -23,14 +23,15 @@
 > Divvyup Website Workflow
 
 ## Website demo
-![Profile Page](https://i.imgur.com/1Z0AmI1.png)
+![Profile Page]([img]https://i.imgur.com/0D3ENvr.png[/img])
+> Profile Page
 
 ![Host a Party](https://i.imgur.com/Va1zBSt.png)
 ![Host a Party2](https://i.imgur.com/C1NdhhF.png)
 > Host a Party
 
-
-
+![Amount to Pay](https://i.imgur.com/0D3ENvr.png)
+> Amount to Pay (responsive on a mobile device)
 
 ## Database Design
 - `MongoDB`
