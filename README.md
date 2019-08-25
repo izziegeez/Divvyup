@@ -30,7 +30,7 @@
 ![Host a Party2](https://i.imgur.com/C1NdhhF.png)
 > Host a Party
 
-![Amount to Pay](https://i.imgur.com/0D3ENvr.png)
+![Amount to Pay](https://i.imgur.com/jp2CCk7.png)
 > Amount to Pay (responsive on a mobile device)
 
 ## Database Design
