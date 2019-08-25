@@ -1,78 +1,111 @@
-# Project Title
+# Event Recommendation Systems
 
-One Paragraph of project description goes here
+## Business Design
+- To design a personalization based event recommendation systems for event search.
 
-## Getting Started
+## General Instruction
+- Design a web service with `RESTful APIs` in Java to handle HTTP requests and responses
+- Frontend: an interactive web page with `AJAX` technology implemented with `HTML`, `CSS` and `JavaScript`. The Event Recommendation Website realizes three main functions:
+   * **Search** events around users
+   * **Favorite** events they like and also delete events they don’t like anymore
+   * Get **recommendation of events** around based on their favorite history and distance to where events will be hold
+- Backend: use `Java` to process logic request, and some supports are as below:
+   * Built with both relational database and NoSQL database (`MySQL` and `MongoDB`) to support data storage from users and items searched in TicketMaster API
+   * Design **content-based recommendation algorithm** for event recommendation
+- Deploy website server on `Amazon EC2`: [Event Recommendation System](http://52.24.237.51/EventRecommend/)
+- Analyze website traffic both online and offline with ELK (`ElasticSearch`, `Logstash` and `Kibana`) and `MapReduce` in MongoDB
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Infrastructure Design
+- 3-tier architecture
+   * Presentation tier: HTML, CSS, JavaScript
+   * Data tier: MySQL, MongoDB
+   * Logic tier: Java
+- Local and remote development environment
 
-### Prerequisites
+![local environment](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/local.png)
+> Local development environment
 
-What things you need to install the software and how to install them
+![remote environment](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/remote.png)
+> Remote development environment
 
-```
-Give examples
-```
+## API Design
+- Logic tier(Java Servlet to RPC)
+   * Search
+      * searchItems
+      * Ticketmaster API
+      * parse and clean data, saveItems
+      * return response
+   * History
+      * get, set, delete favorite items
+      * query database
+      * return response
+   * Recommendation
+      * recommendItems
+      * get favorite history
+      * search similar events, sorting
+      * return response
+   * Login
+      * GET: check if the session is logged in
+      * POST: verify the user name and password, set session time and marked as logged in
+      * query database to verify
+      * return response
+   * Logout
+      * GET: invalid the session if exists and redirect to `index.html`
+      * POST: the same as GET
+      * return response
+   * Register
+      * Set a new user into users table/collection in database
+      * return response
 
-### Installing
+![APIs design](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/APIs.png)
+> APIs design in logic tier
 
-A step by step series of examples that tell you how to get a development env running
+- TicketMasterAPI
+[Official Doc - Discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+- Recommendation Algorithms design
+   * **Content-based Recommendation**: find categories from item profile from a user’s favorite, and recommend the similar items with same categories.
+   * Present recommended items with ranking based on distance (geolocation of users)
 
-Say what the step will be
+![recommendation algorithm](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/recommendation.png)
+> Process of recommend request
 
-```
-Give the example
-```
+## Database Design
+- MySQL
+   * **users** - store user information.
+   * **items** - store item information.
+   * **category** - store item-category relationship
+   * **history** - store user favorite history
 
-And repeat
+![mysql](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/mysql.png)
+> MySQL database design
 
-```
-until finished
-```
+- MongoDB
+   * **users** - store user information and favorite history. = (users + history)
+   * **items** - store item information and item-category relationship. = (items + category)
+   * **logs** – store log information
 
-End with an example of getting some data out of the system or using it for a little demo
+## Implementation Details
+- Design pattern
+   * **Builder pattern**: `Item.java`
+      * When convert events from TicketMasterAPI to java Items, use builder pattern to freely add fields.
+   * **Factory pattern**: `ExternalAPIFactory.java`, `DBConnectionFactory.java`
+      * `ExternalAPIFactory.java`: support multiple function like recommendation of event, restaurant, news, jobs… just link to different public API like TicketMasterAPI. Improve extension ability.
+      * `DBConnectionFactory.java`: support multiple database like MySQL and MongoDB. Improve extension ability.
+   * **Singleton pattern**: `MySQLConnection.java`, `MongoDBConnection.java`
+      * Only create specific number of instance of database, and the class can control the instance itself, and give the global access to outerclass
 
-## Running the tests
+## User Behavior Analysis
+- Online (**ElasticSearch**, **Logstash**, **Kibana**)
+   * Use Logstash to fetch log (in NoSQL-like form), then store data in ElasticSearch, finally use Kibana to analyze the data in ElasticSearch, getting some tables and graphs like APIs use, request status, geolocation of visitors, etc
 
-Explain how to run the automated tests for this system
+![ELK analysis](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/elk.png)
+> Remote development environment
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+- Offline (**MapReduce in MongoDB**)
+   * Copy-paste some logs from Tomcat server
+   * Purify log data and store in MongoDB
+   * Do ``mapreduce()`` in MongoDB
+   * Get a list of timebucket-count in descending order of count, then find the peak time of website traffic
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
