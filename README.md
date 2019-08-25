@@ -38,13 +38,30 @@
 ![Host a Party](https://i.imgur.com/Va1zBSt.png)
 ![Host a Party2](https://i.imgur.com/C1NdhhF.png)
 > Host a Party
+- User is prompted to enter the Party Name and the Party Cost
+- Each party is assigned a random Party ID 
+   * Shared by the Host with party guests through social media, event invites
+   * Used to enter party
 
 ![Join a Party](https://i.imgur.com/FRBxVGu.png)
 ![Join a Party2](https://i.imgur.com/ZmfpAA4.png)
 > Join a Party
+- User is prompted to enter ID of party
+- On entering ID, confirmation information is displayed to make sure you are joining the right party
+- Contribution Amount field for the user to input a contribution to the party
+    * User is asked to confirm their decision
+    * If confirmed, the Host is asked to approve or decline request
+    * If confirmed by the Host, the party cost for the contributing guest gets updated.
+ - Socket.io events
+    * Join party
+    * End party
+    * Contribute 
+ - The main content box on this page displays the User, how much they contributed and how much they need to pay
+Each User’s contribution and payment due
 
 ![Amount to Pay](https://i.imgur.com/DTQENCD.png)
 > Amount to Pay (responsive on a mobile device)
+- End Party causes user balances to be updated, while Cancel Party doesn’t affect User balances 
 
 ## Database Design
 - `MongoDB`
