@@ -23,14 +23,13 @@
 > Divvyup Website Workflow
 
 ## Website demo
-![Host a Party](https://i.imgur.com/U2JKs82.gif)
-> Profile Page
+![Profile Page](https://i.imgur.com/1Z0AmI1.png)
 
-![Host a Party](https://i.imgur.com/5x9Wysz.gif)
+![Host a Party](https://i.imgur.com/Va1zBSt.png)
+![Host a Party2](https://i.imgur.com/C1NdhhF.png)
 > Host a Party
 
-![Join a Party](https://i.imgur.com/eSvmR2N.gif)
-> Join a Party
+
 
 
 ## Database Design
