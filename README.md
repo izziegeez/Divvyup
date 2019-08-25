@@ -23,35 +23,40 @@
 > Divvyup Website Workflow
 
 ## Website demo
-- Profile Page
+![Host a Party](https://i.imgur.com/U2JKs82.gif)
+> Profile Page
+
 ![Host a Party](https://i.imgur.com/5x9Wysz.gif)
+> Host a Party
 
-![APIs design](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/APIs.png)
-> APIs design in logic tier
+![Join a Party](https://i.imgur.com/5x9Wysz.gif)
+> Join a Party
 
-- TicketMasterAPI
-[Official Doc - Discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
-- Recommendation Algorithms design
-   * **Content-based Recommendation**: find categories from item profile from a user’s favorite, and recommend the similar items with same categories.
-   * Present recommended items with ranking based on distance (geolocation of users)
 
-![recommendation algorithm](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/recommendation.png)
-> Process of recommend request
+
+
 
 ## Database Design
-- MySQL
-   * **users** - store user information.
-   * **items** - store item information.
-   * **category** - store item-category relationship
-   * **history** - store user favorite history
-
-![mysql](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/mysql.png)
+- `MongoDB`
+* **Schemas**: a Party and a User schema
+* **Models**: Party and User
+		**Party**: name, id, cost, attendees, archived
+		**User**: username, password, id, account balance
+    
+![MongoDB](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/mysql.png)
 > MySQL database design
+    
+## Security
+- Bcrypt (a Node.JS package)
+  * Strong password policy: Password must be 8 characters long, and contain at least one of each: Capital Letter, Lowercase Character, Non-Alphanumeric Character e.g. !@#$%^&*~)
+  *	Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
+  * Only hashed passwords are stored
+  
 
-- MongoDB
-   * **users** - store user information and favorite history. = (users + history)
-   * **items** - store item information and item-category relationship. = (items + category)
-   * **logs** – store log information
+
+
+##AJAX
+
 
 ## Implementation Details
 - Design pattern
