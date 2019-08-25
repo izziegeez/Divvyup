@@ -18,39 +18,13 @@
    * Presentation tier: React,HTML, CSS, Bootstrap, JavaScript
    * Data tier: MongoDB
    * Logic tier: Java
-- Local and remote development environment
 
 ![Divvyup Website Workflow](http://i.imgur.com/LvDX7h7.png)
 > Divvyup Website Workflow
 
-## API Design
-- Logic tier(Java Servlet to RPC)
-   * Search
-      * searchItems
-      * Ticketmaster API
-      * parse and clean data, saveItems
-      * return response
-   * History
-      * get, set, delete favorite items
-      * query database
-      * return response
-   * Recommendation
-      * recommendItems
-      * get favorite history
-      * search similar events, sorting
-      * return response
-   * Login
-      * GET: check if the session is logged in
-      * POST: verify the user name and password, set session time and marked as logged in
-      * query database to verify
-      * return response
-   * Logout
-      * GET: invalid the session if exists and redirect to `index.html`
-      * POST: the same as GET
-      * return response
-   * Register
-      * Set a new user into users table/collection in database
-      * return response
+## Website demo
+- Profile Page
+![HostParty](https://drive.google.com/file/d/1mwunV4H-unVdJRjDX9jxBYr5g9Casn-B/view?usp=sharing)
 
 ![APIs design](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/APIs.png)
 > APIs design in logic tier
