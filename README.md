@@ -2,25 +2,25 @@
 
 ## General Instruction
 - Implemented an expense splitting service like Splitwise that allows real-time balance update when new attendees join to contribute to the cost of goods, and helps distribute the responsibility of reimbursement among the group. 
-- Frontend: an interactive web page with `AJAX` technology implemented with `React`, `HTML`, `CSS` and `JavaScript`. The Divvyup Website realizes four main functions:
+- Frontend: an interactive web page with `AJAX` technology implemented with `React`, `HTML`, `CSS` ,`Bootstrap`, `JavaScript`. The Divvyup Website realizes four main functions:
    * **Host** a party: user is prompted to enter a Party name and Party Cost
    * **Join** a party: user is prompted to enter the Party ID and input contribution amount
    * **End** a party: causes user's balance to be updated and displays how much they still need to pay
    * **Account Page**: Displays user's previous party history i.e. party name and amount due per party and a list of active parties that the user is currently in with party name and ID
-- Backend: use `Java` to process logic request, and some supports are as below:
-   * Built with both relational database and NoSQL database (`MySQL` and `MongoDB`) to support data storage from users and items searched in TicketMaster API
-   * Design **content-based recommendation algorithm** for event recommendation
-- Deploy website server on `Amazon EC2`: [Event Recommendation System](http://52.24.237.51/EventRecommend/)
-- Analyze website traffic both online and offline with ELK (`ElasticSearch`, `Logstash` and `Kibana`) and `MapReduce` in MongoDB
+- Backend: Designed `database schemas` to store users’ name, profile pictures, balances and password, with parties’ name, cost and attendees in `MongoDB`.
+  *	Used `AJAX` to `GET` users’ previous and active parties and `POST` to update balances for all attendees.
+  * Used `Socket.io` to enable real-time event-based communication for join / end / leave event, attendee change and item additions
+  * Encrypted user passwords with `Bcrypt` to ensure database security.
+  *  Deploy website server on `Amazon EC2`: http://divvy-react.s3-website.us-east-2.amazonaws.com/
 
 ## Infrastructure Design
 - 3-tier architecture
-   * Presentation tier: HTML, CSS, JavaScript
-   * Data tier: MySQL, MongoDB
+   * Presentation tier: React,HTML, CSS, Bootstrap, JavaScript
+   * Data tier: MongoDB
    * Logic tier: Java
 - Local and remote development environment
 
-![local environment](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/local.png)
+![local environment](https://s.imgur.com/min/embed.js)
 > Local development environment
 
 ![remote environment](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/remote.png)
