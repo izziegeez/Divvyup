@@ -1,14 +1,12 @@
-# Event Recommendation Systems
-
-## Business Design
-- To design a personalization based event recommendation systems for event search.
+# DivvyUp: Divide Expenses with Friends (Full-stack NodeJS Web Application) 		
 
 ## General Instruction
-- Design a web service with `RESTful APIs` in Java to handle HTTP requests and responses
-- Frontend: an interactive web page with `AJAX` technology implemented with `HTML`, `CSS` and `JavaScript`. The Event Recommendation Website realizes three main functions:
-   * **Search** events around users
-   * **Favorite** events they like and also delete events they don’t like anymore
-   * Get **recommendation of events** around based on their favorite history and distance to where events will be hold
+- Implemented an expense splitting service like Splitwise that allows real-time balance update when new attendees join to contribute to the cost of goods, and helps distribute the responsibility of reimbursement among the group. 
+- Frontend: an interactive web page with `AJAX` technology implemented with `React`, `HTML`, `CSS` and `JavaScript`. The Divvyup Website realizes four main functions:
+   * **Host** a party: user is prompted to enter a Party name and Party Cost
+   * **Join** a party: user is prompted to enter the Party ID and input contribution amount
+   * **End** a party: causes user's balance to be updated and displays how much they still need to pay
+   * **Account Page**: Displays user's previous party history i.e. party name and amount due per party and a list of active parties that the user is currently in with party name and ID
 - Backend: use `Java` to process logic request, and some supports are as below:
    * Built with both relational database and NoSQL database (`MySQL` and `MongoDB`) to support data storage from users and items searched in TicketMaster API
    * Design **content-based recommendation algorithm** for event recommendation
