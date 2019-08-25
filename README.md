@@ -1,5 +1,5 @@
 # DivvyUp: Divide Expenses with Friends
-- (Full-stack NodeJS Web Application) 		
+- Full-stack NodeJS Web Application		
 ## General Instruction
 - Implemented an expense splitting service like Splitwise that allows real-time balance update when new attendees join to contribute to the cost of goods, and helps distribute the responsibility of reimbursement among the group. 
 - Frontend: an interactive web page with `AJAX` technology implemented with `React`, `HTML`, `CSS` ,`Bootstrap`, `JavaScript`. The Divvyup Website realizes four main functions:
@@ -8,10 +8,10 @@
    * **End** a party: causes user's balance to be updated and displays how much they still need to pay
    * **Account Page**: Displays user's previous party history i.e. party name and amount due per party and a list of active parties that the user is currently in with party name and ID
 - Backend: Designed `database schemas` to store users’ name, profile pictures, balances and password, with parties’ name, cost and attendees in `MongoDB`.
-  *	Used `AJAX` to `GET` users’ previous and active parties and `POST` to update balances for all attendees.
+  * Used `AJAX` to `GET` users’ previous and active parties and `POST` to update balances for all attendees.
   * Used `Socket.io` to enable real-time event-based communication for join / end / leave event, attendee change and item additions
   * Encrypted user passwords with `Bcrypt` to ensure database security.
-  *  Deploy website server on `Amazon EC2`: http://divvy-react.s3-website.us-east-2.amazonaws.com/
+  *Deployed website server on `Amazon EC2`: http://divvy-react.s3-website.us-east-2.amazonaws.com/
 
 ## Infrastructure Design
 - 3-tier architecture
@@ -41,7 +41,7 @@
 		**User**: username, password, id, account balance
     
 ## Implementation Details
-* **`AJAX`** :We use axios in React.
+-`AJAX` :We use axios in React.
  - `GET`:
  	* Login page: send all users in DB
 	* Profile page: send individual user information
@@ -50,11 +50,21 @@
 	* Party page: send info on all active parties and the individual party
 	* Contribute page: send info on individual party
 	* Error page: sends error info
-		
 - `POST`:
 	* Login page: create a new user
 	* Host page: create a new party
 	* Contribute page: update individual user and party information
+-`Socket.io`: We use Socket.io(a Node.JS package) to ensure realtime update
+	-Server Events:
+		*join: adds the user to the party specified, creates a new one if it doesn’t exist
+		*endParty: archives the current party and sends out payment information
+		*leaveParty: indicates the user has left the party in the party’s info
+	addItems: users can add the cost of the item they bring as they come to the party
+		
+	-Client Events:
+		*endParty: redirects all users to payment page
+		*leaveParty: redirects to profile page
+		*attendanceChange: updates attendee list and cost
 
 ## Security
 - `Bcrypt` (a Node.JS package)
