@@ -1,5 +1,11 @@
 # DivvyUp: Divide Expenses with Friends
-- Full-stack NodeJS Web Application		
+- Full-stack NodeJS Web Application
+- The problem: Normally the host pays for the party and takes on the sole responsibility of asking partygoers for repayment, which is awkward and inefficient
+- DivvyUp makes it easier for the host by distributing expenses among the participants. The app takes the amount you contributed minus (the total price of goods/total number of people)
+- All DivvyUp members can add new members as they arrive at the party and the divvy up price goes down as more people join
+This encourages hosts and partygoers to branch out and invite more people. 
+- At the end, the app displays each user’s contribution and payment due, removing the hassle of splitting payments manually!
+
 ## General Instruction
 - Implemented an expense splitting service like Splitwise that allows real-time balance update when new attendees join to contribute to the cost of goods, and helps distribute the responsibility of reimbursement among the group. 
 - Frontend: an interactive web page with `AJAX` technology implemented with `React`, `HTML`, `CSS` ,`Bootstrap`, `JavaScript`. The Divvyup Website realizes four main functions:
@@ -11,7 +17,9 @@
   * Used `AJAX` to `GET` users’ previous and active parties and `POST` to update balances for all attendees.
   * Used `Socket.io` to enable real-time event-based communication for join / end / leave event, attendee change and item additions
   * Encrypted user passwords with `Bcrypt` to ensure database security.
-  *Deployed website server on `Amazon EC2`: http://divvy-react.s3-website.us-east-2.amazonaws.com/
+  * Deployed website server on `Amazon EC2`: http://divvy-react.s3-website.us-east-2.amazonaws.com/
+  
+ 
 
 ## Infrastructure Design
 - 3-tier architecture
@@ -56,8 +64,7 @@
     * Join party
     * End party
     * Contribute 
- - The main content box on this page displays the User, how much they contributed and how much they need to pay
-Each User’s contribution and payment due
+ - The main content box on this page displays the User, Each User’s contribution and payment due
 
 ![Amount to Pay](https://i.imgur.com/DTQENCD.png)
 > Amount to Pay (responsive on a mobile device)
@@ -103,3 +110,9 @@ Each User’s contribution and payment due
   
 ![MongoDB](https://i.imgur.com/273gw4F.png)
  > only hashed paswrods are stored
+
+## Testing
+- Security Testing:
+    * We found that our program has a high risk for being hacked, especially since our passwords are being stored directly in the database, not even using hashmaps
+	*  Solution1: instead of having the users to input a password to enter the party, we decide not letting the users input any passwords
+	* Solution 2: we fixed this by integrating Google login API so that we don’t have to handle passwords directly
