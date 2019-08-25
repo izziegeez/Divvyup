@@ -110,9 +110,3 @@ This encourages hosts and partygoers to branch out and invite more people.
   
 ![MongoDB](https://i.imgur.com/273gw4F.png)
  > only hashed paswrods are stored
-
-## Testing
-- Security Testing:
-    * We found that our program has a high risk for being hacked, especially since our passwords are being stored directly in the database, not even using hashmaps
-	*  Solution1: instead of having the users to input a password to enter the party, we decide not letting the users input any passwords
-	* Solution 2: we fixed this by integrating Google login API so that we don’t have to handle passwords directly
