@@ -33,9 +33,6 @@
 > Join a Party
 
 
-
-
-
 ## Database Design
 - `MongoDB`
 * **Schemas**: a Party and a User schema
@@ -43,53 +40,25 @@
 		**Party**: name, id, cost, attendees, archived
 		**User**: username, password, id, account balance
     
-![MongoDB](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/mysql.png)
-> MySQL database design
-    
+## Implementation Details
+* **AJAX** :We use axios in React.
+ *GET:
+		* Login page: send all users in DB
+		* Profile page: send individual user information
+		* Host page: send all active parties
+		* Join page: send all active parties
+		* Party page: send info on all active parties and the individual party
+		* Contribute page: send info on individual party
+		* Error page: sends error info
+		
+*POST:
+		*Login page: create a new user
+		*Host page: create a new party
+		*Contribute page: update individual user and party information
+
 ## Security
 - Bcrypt (a Node.JS package)
   * Strong password policy: Password must be 8 characters long, and contain at least one of each: Capital Letter, Lowercase Character, Non-Alphanumeric Character e.g. !@#$%^&*~)
   *	Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
-  * Only hashed passwords are stored
-  
-
-
-
-##AJAX
-
-
-## Implementation Details
-- Design pattern
-   * **Builder pattern**: `Item.java`
-      * When convert events from TicketMasterAPI to java Items, use builder pattern to freely add fields.
-   * **Factory pattern**: `ExternalAPIFactory.java`, `DBConnectionFactory.java`
-      * `ExternalAPIFactory.java`: support multiple function like recommendation of event, restaurant, news, jobs… just link to different public API like TicketMasterAPI. Improve extension ability.
-      * `DBConnectionFactory.java`: support multiple database like MySQL and MongoDB. Improve extension ability.
-   * **Singleton pattern**: `MySQLConnection.java`, `MongoDBConnection.java`
-      * Only create specific number of instance of database, and the class can control the instance itself, and give the global access to outerclass
-
-## User Behavior Analysis
-- Online (**ElasticSearch**, **Logstash**, **Kibana**)
-   * Use Logstash to fetch log (in NoSQL-like form), then store data in ElasticSearch, finally use Kibana to analyze the data in ElasticSearch, getting some tables and graphs like APIs use, request status, geolocation of visitors, etc
-
-![ELK analysis](https://raw.githubusercontent.com/Wangxh329/EventRecommendation/master/img_font_icon_sources/doc/elk.png)
-> Remote development environment
-
-- Offline (**MapReduce in MongoDB**)
-   * Copy-paste some logs from Tomcat server
-   * Purify log data and store in MongoDB
-   * Do ``mapreduce()`` in MongoDB
-   * Get a list of timebucket-count in descending order of count, then find the peak time of website traffic
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+![MongoDB](https://i.imgur.com/273gw4F.png)
+ > only hashed paswrods are stored
