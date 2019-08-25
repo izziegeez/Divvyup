@@ -55,16 +55,16 @@
 	* Host page: create a new party
 	* Contribute page: update individual user and party information
 	
--`Socket.io`: We use Socket.io(a Node.JS package) to ensure realtime update
-  -Server Events:
-	*join: adds the user to the party specified, creates a new one if it doesn’t exist
-	*endParty: archives the current party and sends out payment information
-	*leaveParty: indicates the user has left the party in the party’s info
+- `Socket.io`: We use Socket.io(a Node.JS package) to ensure realtime update
+  - Server Events:
+	* join: adds the user to the party specified, creates a new one if it doesn’t exist
+	* endParty: archives the current party and sends out payment information
+	* leaveParty: indicates the user has left the party in the party’s info
 	addItems: users can add the cost of the item they bring as they come to the party
-  -Client Events:
-	*endParty: redirects all users to payment page
-	*leaveParty: redirects to profile page
-	*attendanceChange: updates attendee list and cost
+  - Client Events:
+	* endParty: redirects all users to payment page
+	* leaveParty: redirects to profile page
+	* attendanceChange: updates attendee list and cost
 
 ## Security
 - `Bcrypt` (a Node.JS package)
