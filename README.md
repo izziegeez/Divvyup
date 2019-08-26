@@ -18,14 +18,12 @@ This encourages hosts and partygoers to branch out and invite more people.
   * Used `Socket.io` to enable real-time event-based communication for join / end / leave event, attendee change and item additions
   * Encrypted user passwords with `Bcrypt` to ensure database security.
   * Deployed website server on `Amazon EC2`: http://divvy-react.s3-website.us-east-2.amazonaws.com/
-  
  
-
 ## Infrastructure Design
 - 3-tier architecture
-   * Presentation tier: React,HTML, CSS, Bootstrap, JavaScript
+   * Presentation tier: React,HTML, CSS, Bootstrap, JavaScript(AJAX)
    * Data tier: MongoDB
-   * Logic tier: Java
+   * Logic tier: NodeJS(Express, Socket.io, Bcrypt)
 
 ![Divvyup Website Workflow](http://i.imgur.com/LvDX7h7.png)
 > Divvyup Website Workflow
