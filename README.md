@@ -107,4 +107,4 @@ This encourages hosts and partygoers to branch out and invite more people.
   * Used `Bcrypt` to hash user ID's and passwords, which are then stored in MongoDB to ensure security
   
 ![MongoDB](https://i.imgur.com/273gw4F.png)
- > only hashed paswrods are stored
+ > only hashed passwords are stored
